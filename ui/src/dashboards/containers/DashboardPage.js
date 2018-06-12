@@ -311,10 +311,7 @@ class DashboardPage extends Component {
     dashboardActions.putDashboardByID(dashboardID)
   }
 
-  handleEditTemplateVariables = (
-    templates,
-    onSaveTemplatesSuccess
-  ) => async () => {
+  handleEditTemplateVariables = async templates => {
     const {location, dashboardActions, dashboard} = this.props
 
     try {
@@ -322,7 +319,6 @@ class DashboardPage extends Component {
         ...dashboard,
         templates,
       })
-      onSaveTemplatesSuccess()
       const deletedTempVars = dashboard.templates.filter(
         ({tempVar: oldTempVar}) =>
           !templates.find(({tempVar: newTempVar}) => oldTempVar === newTempVar)
@@ -481,6 +477,7 @@ class DashboardPage extends Component {
             templates={dashboard && dashboard.templates}
             meRole={meRole}
             isUsingAuth={isUsingAuth}
+            onSaveTemplates={this.handleEditTemplateVariables}
             onSelectTemplate={this.handleSelectTemplate}
             onOpenTemplateManager={this.handleOpenTemplateManager}
             isOpen={showTemplateControlBar}

@@ -1,0 +1,52 @@
+$padding: 20px 30px;
+
+.edit-temp-var {
+  margin: 0 auto;
+  width: 650px;
+}
+
+.edit-temp-var--header {
+  background-color: $g0-obsidian;
+  padding: $padding;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.edit-temp-var--header-controls > button {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.edit-temp-var--body {
+  @include gradient-v($g2-kevlar, $g0-obsidian);
+  padding: $padding;
+
+  .delete {
+    margin: 20px auto 10px auto;
+    width: 90px;
+  }
+}
+
+.edit-temp-var--body-row {
+  display: flex;
+
+  .name {
+    flex: 1 1 50%;
+    padding-right: 10px;
+  }
+
+  .template-type {
+    flex: 1 1 50%;
+    padding-left: 10px;
+  }
+
+  .dropdown {
+    display: block;
+    width: 100%;
+  }
+
+  .dropdown-toggle {
+    width: 100%;
+  }
+}

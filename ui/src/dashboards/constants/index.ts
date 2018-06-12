@@ -2,7 +2,7 @@ import {
   DEFAULT_VERTICAL_TIME_AXIS,
   DEFAULT_FIX_FIRST_COLUMN,
 } from 'src/shared/constants/tableGraph'
-import {Cell, QueryConfig} from 'src/types'
+import {Cell, QueryConfig, TemplateType} from 'src/types'
 import {CellType, Dashboard, DecimalPlaces} from 'src/types/dashboard'
 import {TimeRange} from 'src/types/query'
 import {TEMP_VAR_DASHBOARD_TIME} from 'src/shared/constants'
@@ -109,27 +109,27 @@ export const NEW_DASHBOARD: NewDefaultDashboard = {
 export const TEMPLATE_TYPES = [
   {
     text: 'CSV',
-    type: 'csv',
+    type: TemplateType.CSV,
   },
   {
     text: 'Databases',
-    type: 'databases',
+    type: TemplateType.Databases,
   },
   {
     text: 'Measurements',
-    type: 'measurements',
+    type: TemplateType.Measurements,
   },
   {
     text: 'Field Keys',
-    type: 'fieldKeys',
+    type: TemplateType.FieldKeys,
   },
   {
     text: 'Tag Keys',
-    type: 'tagKeys',
+    type: TemplateType.TagKeys,
   },
   {
     text: 'Tag Values',
-    type: 'tagValues',
+    type: TemplateType.TagValues,
   },
 ]
 

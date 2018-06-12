@@ -15,6 +15,7 @@ interface Props {
   isOpen: boolean
   onOpenTemplateManager: () => void
   onSelectTemplate: (id: string) => void
+  onSaveTemplates: (templates: Template[]) => void
 }
 
 class TemplateControlBar extends Component<Props> {
@@ -44,6 +45,8 @@ class TemplateControlBar extends Component<Props> {
                   isUsingAuth={isUsingAuth}
                   template={template}
                   onSelectTemplate={onSelectTemplate}
+                  onSaveTemplate={this.handleSaveTemplate}
+                  onDeleteTemplate={this.handleDeleteTemplate}
                 />
               ))
             ) : (
@@ -65,6 +68,26 @@ class TemplateControlBar extends Component<Props> {
         </div>
       </div>
     )
+  }
+
+  private handleSaveTemplate = async (template: Template): Promise<any> => {
+    const {templates, onSaveTemplates} = this.props
+    const newTemplates = templates.reduce((acc, t) => {
+      if (t.id === template.id) {
+        return [...acc, template]
+      }
+
+      return [...acc, t]
+    }, [])
+
+    await onSaveTemplates(newTemplates)
+  }
+
+  private handleDeleteTemplate = async (template: Template): Promise<any> => {
+    const {templates, onSaveTemplates} = this.props
+    const newTemplates = templates.filter(t => t.id !== template.id)
+
+    await onSaveTemplates(newTemplates)
   }
 }
 
