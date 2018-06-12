@@ -3,6 +3,7 @@ import {shallow} from 'enzyme'
 
 import TemplateControlBar from 'src/dashboards/components/TemplateControlBar'
 import TemplateControlDropdown from 'src/dashboards/components/TemplateControlDropdown'
+import {TemplateType, TemplateValueType} from 'src/types'
 
 const defaultProps = {
   isOpen: true,
@@ -11,16 +12,16 @@ const defaultProps = {
       id: '000',
       tempVar: ':alpha:',
       label: '',
-      type: 'constant',
+      type: TemplateType.Constant,
       values: [
         {
           value: 'firstValue',
-          type: 'constant',
+          type: TemplateValueType.Constant,
           selected: false,
         },
         {
           value: 'secondValue',
-          type: 'constant',
+          type: TemplateValueType.Constant,
           selected: false,
         },
       ],

@@ -7,6 +7,9 @@ import {
   TemplateQuery,
   TemplateValue,
   URLQueryParams,
+  TemplateType,
+  TemplateValueType,
+  TemplateUpdate,
 } from './tempVars'
 import {
   GroupBy,
@@ -96,4 +99,7 @@ export {
   SchemaFilter,
   RemoteDataState,
   URLQueryParams,
+  TemplateType,
+  TemplateValueType,
+  TemplateUpdate,
 }

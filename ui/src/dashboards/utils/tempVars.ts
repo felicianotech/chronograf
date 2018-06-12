@@ -8,7 +8,7 @@ import {
   TemplateValue,
   URLQueryParams,
 } from 'src/types'
-import {TemplateUpdate} from 'src/types/tempVars'
+import {TemplateUpdate} from 'src/types'
 
 interface PartialTemplateWithQuery {
   query: string
